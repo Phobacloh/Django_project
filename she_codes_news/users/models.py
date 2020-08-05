@@ -6,3 +6,6 @@ class CustomUser (AbstractUser):
     pass
     # profile picture
     # bio
+
+    def __str__(self):
+        return self.username
