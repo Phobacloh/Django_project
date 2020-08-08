@@ -53,6 +53,10 @@ a, p {
     font-family: monospace;
 }
 
+form label{
+    display: inline-block;
+    width: 100px;
+}
 form{
     border: 2px solid #f5efc1;
     font-size: 15px;
@@ -68,31 +72,20 @@ form{
     border: 2px solid #f5efc1;
     width: 80%;
     margin: 5px;
-    margin-left: 37px;
     background-color: rgb(240, 239, 239)
 
-}
-
-#id_author{
-    border: 2px solid #f5efc1;
-    width: 80%;
-    margin: 5px;
-    margin-left: 30px;
-    background-color: rgb(240, 239, 239)
 }
 
 #id_content{
     border: 2px solid #f5efc1;
     width: 80%;
     margin: 5px;
-    margin-left: 22px;
     background-color: rgb(240, 239, 239)
 }
 #id_image_url{
     border: 2px solid #f5efc1;
     width: 80%;
     margin: 5px;
-    margin-left: 7px;
     background-color: rgb(240, 239, 239)
 }
 
@@ -100,7 +93,6 @@ form{
     border: 2px solid whitesmoke;
     width: 80%;
     margin: 5px;
-    margin-left: 14px;
     background-color:  rgb(240, 239, 239)
 }
 
