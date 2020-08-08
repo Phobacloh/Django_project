@@ -57,6 +57,19 @@ form label{
     display: inline-block;
     width: 100px;
 }
+
+form button{
+    display:block;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #f5efc1;
+    background-color: rgb(207, 204, 204)
+}
+form a{
+    color: blanchedalmond;
+    text-decoration: underline;
+}
 form{
     border: 2px solid #f5efc1;
     font-size: 15px;
@@ -67,39 +80,23 @@ form{
     margin-right: 10%;
     margin-top: 30PX;
 }
-
-#id_title{
-    border: 2px solid #f5efc1;
+form input{
     width: 80%;
-    margin: 5px;
-    background-color: rgb(240, 239, 239)
-
 }
 
 #id_content{
-    border: 2px solid #f5efc1;
     width: 80%;
-    margin: 5px;
-    background-color: rgb(240, 239, 239)
-}
-#id_image_url{
-    border: 2px solid #f5efc1;
-    width: 80%;
-    margin: 5px;
-    background-color: rgb(240, 239, 239)
 }
 
-#id_pub_date{
-    border: 2px solid whitesmoke;
-    width: 80%;
-    margin: 5px;
-    background-color:  rgb(240, 239, 239)
-}
-
-#id_submit{
+#register{
+    text-align: center;
+    
+} 
+/* #id_submit{
     display:block;
+    width: 15%;
     margin-left: auto;
     margin-right: auto;
     border: 2px solid #f5efc1;
     background-color: rgb(207, 204, 204)
-}
+}  */
