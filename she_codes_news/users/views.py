@@ -13,6 +13,8 @@ class CreateAccountView(generic.edit.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
-class UserProfile(generic.TemplateView):
+class UserProfile(generic.edit.FormView):
+    form_class = CustomUserChangeForm
+    success_url = reverse_lazy('login')
     template_name = 'users/UserProfile.html'
 # Create your views here.
