@@ -35,7 +35,7 @@ class StoryView(generic.DetailView):
     context_object_name = 'story'
 
 class StoryViewByAuthor(LoginRequiredMixin, generic.ListView):
-    template_name = 'news/postList.html'
+    template_name = 'news/UserProfile.html'
 
     def get_queryset(self):
         '''Return all news stories.'''
