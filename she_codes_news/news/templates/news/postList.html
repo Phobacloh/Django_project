@@ -12,7 +12,15 @@
     {{ user.email }}
 
 
-<div id="all-stories">
+<div>
+{% for NewsStory in posts %}
+    Username: {{ NewsStory.author.username}}
+    Post: {{ NewsStory.content }}
+
+{% endfor %}
+</div>
+
+{<div id="user_stories">
         {% if user_stories %}
             {% for story in all_stories %}
                 {% include "./storyCard.html" with story=story %}
@@ -20,7 +28,6 @@
         {% else %}
             <p>No stories are available.</p>
         {% endif %}
-    </div>
-
+</div>
 
 {% endblock %}

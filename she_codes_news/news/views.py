@@ -43,11 +43,16 @@ class StoryViewByAuthor(LoginRequiredMixin, generic.ListView):
 
     def get_context_data(self, **kwargs):
             context = super().get_context_data(**kwargs)
-            context['user_stories'] = NewsStory.objects.all().order_by('-author')[:4]
-            context['all_stories'] = NewsStory.objects.all().order_by('-author')
+            context['user_stories'] = NewsStory.objects.filter(author=self.request.user)[:4]
+            context['all_stories'] = NewsStory.objects.filter(author=self.request.user)
             return context 
     
+    # def index_page(request):
+    #     logged_in_user_posts = NewsStory.objects.filter(author=request.user)
+    #     return render (request, 'news/postList.html',{'posts': logged_in_user_posts})
     
+
+
     
     # userstory (request):
     #     user = request.user
