@@ -5,7 +5,20 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email']
+        fields = ['username', 'email', 'dob', 'bio', 'profile_picture']
+        widgets = {
+
+        'dob':forms.DateInput(
+                format=('%m/%d/%Y'),
+                attrs={
+                    'class': 'form-control',
+                    'placeholder':'Select a date',
+                    'type':'date',
+                    }
+            )
+        
+        }
+
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:

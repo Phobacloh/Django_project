@@ -3,9 +3,9 @@ from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
 class CustomUser (AbstractUser):
-    # date of birth = models.DateField()
-    # bio = models.TextField(null=True)
-    # profile picture
+    dob = models.DateField(null=True, blank=True)
+    bio = models.TextField(null=True)
+    profile_picture = models.URLField(null=True, blank=True)
     # bio
 
     def __str__(self):

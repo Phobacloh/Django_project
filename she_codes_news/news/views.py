@@ -63,6 +63,11 @@ class AuthorDetailView(generic.DetailView):
     model = User
     template_name = 'news/AuthorDetail.html'
    
+
+class StoryUpdateView(generic.UpdateView):
+    model = NewsStory
+    fields = '__all__'
+    template_name = 'news/storyUpdate.html'
 # class StoriesByAuthor(generic.ListView):
 #     template_name = 'news/storyAuthor.html'
 
