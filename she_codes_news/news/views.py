@@ -5,6 +5,11 @@ from .forms import StoryForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+# from django.contrib.auth.models import user
+from django.contrib.auth import get_user_model
+
+
+User = get_user_model()
 
 class AddStoryView(LoginRequiredMixin, generic.CreateView):
     form_class = StoryForm
@@ -47,15 +52,34 @@ class StoryViewByAuthor(LoginRequiredMixin, generic.ListView):
             context['all_stories'] = NewsStory.objects.filter(author=self.request.user)
             return context 
     
-    # def index_page(request):
-    #     logged_in_user_posts = NewsStory.objects.filter(author=request.user)
-    #     return render (request, 'news/postList.html',{'posts': logged_in_user_posts})
-    
+
+class AuthorListView(generic.ListView):
+    model = User
+    template_name = 'news/authorList.html'
+    context_object_name = 'author_list'
 
 
-    
-    # userstory (request):
-    #     user = request.user
-    #     user_posts = NewsStory.objects.filter(author=request.user).order_by('-pub_date')
-    #     template = 'postList.html'
-    #     return render(request, template, {'user_posts':user_posts,'user': user})
+class AuthorDetailView(generic.DetailView):
+    model = User
+    template_name = 'news/AuthorDetail.html'
+   
+# class StoriesByAuthor(generic.ListView):
+#     template_name = 'news/storyAuthor.html'
+
+#     def get_queryset(self):
+#         '''Return all news stories.'''
+#         return NewsStory.objects.all()
+
+#     def get_context_data(self, **kwargs):
+#             author = story.author
+#             context = super().get_context_data(**kwargs)
+#             context['user_stories'] = NewsStory.objects.filter(author=author)[:4]
+#             context['all_stories'] = NewsStory.objects.filter(author=author)
+#             return context 
+#this is going to need to call on the other users, not self...probably something to do with forrienKey or PK or something...
+
+# class StoriesByAuthor():
+#     template_name = 'news/storyAuthor.html'
+#     model = User
+#     context_object_name = 'author'
+#     slug_field = "Username"

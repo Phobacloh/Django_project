@@ -9,7 +9,8 @@ class NewsStory(models.Model):
     image_url = models.URLField(max_length=400,default="Paste image URL here")
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='stories'
     )
 def publish(self):
     self.published_date = timezone.now()
