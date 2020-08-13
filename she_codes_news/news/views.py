@@ -2,7 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 # from django.contrib.auth.models import user
@@ -75,7 +75,6 @@ class StoryUpdateView(LoginRequiredMixin, generic.UpdateView):
     success_url = reverse_lazy('news:index')
     # User = get_user_model
     
-
 
 
 # class StoriesByAuthor(generic.ListView):

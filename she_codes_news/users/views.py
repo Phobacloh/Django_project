@@ -5,6 +5,7 @@ from .forms import CustomUserChangeForm, CustomUserCreationForm
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 User = get_user_model()
 
@@ -18,3 +19,10 @@ class UserProfile(generic.edit.FormView):
     success_url = reverse_lazy('login')
     template_name = 'news/UserProfile.html'
 # Create your views here.
+
+class ProfileUpdateView(LoginRequiredMixin, generic.UpdateView):
+    # permission_required = 'news.change_NewsStory'
+    model = CustomUser
+    fields = '__all__'
+    template_name = 'users/updateProfile.html'
+    success_url = reverse_lazy('news:UserProfile')
