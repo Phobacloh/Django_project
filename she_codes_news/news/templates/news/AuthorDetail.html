@@ -8,17 +8,6 @@
 {% endblock %}
 
 {% block content %}
-{% comment %} <form method="post">
-  {% csrf_token %}
-  {{ user_form.as_p }}
-  {{ profile_form.as_p }}
-  <button type="submit">Save changes</button>
-</form> {% endcomment %}
-<h2>{{ object.username}}'s Profile</h2>
-<p> </br>
-<b>Username:</b>  {{ object.username}}</br>
-<b>Email address:</b>  {{ object.email }}</br>
-</p>
 
 <h2> {{ object.username }}'s Stories </h2>
 

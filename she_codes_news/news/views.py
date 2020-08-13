@@ -2,7 +2,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory
 from .forms import StoryForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 # from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 # from django.contrib.auth.models import user
@@ -57,17 +57,27 @@ class AuthorListView(generic.ListView):
     model = User
     template_name = 'news/authorList.html'
     context_object_name = 'author_list'
+    # ordered_authors = User.objects.all().order_by('author.pk')
 
 
 class AuthorDetailView(generic.DetailView):
     model = User
     template_name = 'news/AuthorDetail.html'
    
+# class StoryUpdateButtonView(LoginRequiredMixin, generic.DetailView):
+#     model = User
 
-class StoryUpdateView(generic.UpdateView):
+class StoryUpdateView(LoginRequiredMixin, generic.UpdateView):
+    # permission_required = 'news.change_NewsStory'
     model = NewsStory
     fields = '__all__'
     template_name = 'news/storyUpdate.html'
+    success_url = reverse_lazy('news:index')
+    # User = get_user_model
+    
+
+
+
 # class StoriesByAuthor(generic.ListView):
 #     template_name = 'news/storyAuthor.html'
 

@@ -85,3 +85,6 @@
     width: 50%;
 
 }
+.help_text {
+    display: none;
+}

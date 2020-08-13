@@ -5,7 +5,11 @@ from .models import CustomUser
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'dob', 'bio', 'profile_picture']
+        fields = ['username', 'email', 'dob', 'bio',]
+        help_texts = {k:"" for k in fields}
+        #     "username": None,
+        #     "Password1": None,
+        # }
         widgets = {
 
         'dob':forms.DateInput(

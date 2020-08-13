@@ -13,6 +13,15 @@
     <div id="story-content">
         <img src="{{ story.image_url }}">
         {{ story.content|linebreaks }}
+    
+    {% if user.is_authenticated and request.user == story.author %}
+        <a href="{% url 'news:storyUpdate' pk=story.author.pk %}"><p>Update Story</p></a>
+    {% else %}
+        {% comment %} <a href="{% url 'login' %}">Login</a> {% endcomment %}
+    {% endif %}
+
     </div>
+
 </div>
 {% endblock %}
+
