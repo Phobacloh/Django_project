@@ -22,7 +22,8 @@ class UserProfile(generic.edit.FormView):
 
 class ProfileUpdateView(LoginRequiredMixin, generic.UpdateView):
     # permission_required = 'news.change_NewsStory'
-    model = CustomUser
-    fields = '__all__'
+    form_class = CustomUserChangeForm
+    model = User
+    # fields = 'email', 'dob', 'bio', 'password'
     template_name = 'users/updateProfile.html'
     success_url = reverse_lazy('news:UserProfile')

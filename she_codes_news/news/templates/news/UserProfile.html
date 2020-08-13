@@ -16,8 +16,13 @@
 </form> {% endcomment %}
 <h2>{{ user.username}}'s Profile</h2>
 <p> </br>
-<b>Username:</b>  {{ user.username}}</br>
-<b>Email address:</b>  {{ user.email }}</br>
+{% if user.is_authenticated %}
+        <a href="{% url 'users:updateProfile' pk=request.user.pk %}"><p>Update your details</p></a>
+    {% else %}
+   
+    {% endif %}
+
+<b>About me:</b>  {{ user.bio }}</br>
 </p>
 
 <h2> {{ user.username }}'s Stories </h2>
