@@ -69,7 +69,7 @@ class AuthorDetailView(generic.DetailView):
 
 class StoryUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = NewsStory
-    # fields = '__all__'
+    fields = '__all__'
     template_name = 'news/storyUpdate.html'
     success_url = reverse_lazy('news:index')
     

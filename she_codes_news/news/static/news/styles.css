@@ -113,6 +113,7 @@ body{
 #user_stories .story-card {
     flex-basis: 32%;
     flex-grow: 1;
+    color: #f18e89;
 }
 
 #bio{
