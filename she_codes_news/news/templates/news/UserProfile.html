@@ -8,6 +8,11 @@
 {% endblock %}
 
 {% block content %}
+{% if user.is_authenticated %}
+        <a class="update" href ="{% url 'users:updateProfile' pk=request.user.pk %}"><p>Update your details</p></a>
+    {% else %}
+   
+    {% endif %}
 
 <h2>{{ user.username}}'s Profile</h2></br>
 <h3>About me:</h3></br> 
@@ -15,11 +20,6 @@
 <h3>Date of Birth:</h3></br>  
 <p id = "dob">{{ user.dob }}</br></p>
 
-{% if user.is_authenticated %}
-        <a class="update" href ="{% url 'users:updateProfile' pk=request.user.pk %}"><p>Update your details</p></a>
-    {% else %}
-   
-    {% endif %}
 
 <h2> {{ user.username }}'s Stories </h2>
 

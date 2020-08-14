@@ -68,7 +68,6 @@ class AuthorDetailView(generic.DetailView):
 #     model = User
 
 class StoryUpdateView(LoginRequiredMixin, generic.UpdateView):
-    form_class = StoryForm
     model = NewsStory
     # fields = '__all__'
     template_name = 'news/storyUpdate.html'
