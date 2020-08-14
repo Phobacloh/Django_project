@@ -37,9 +37,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = ['username', 'email', 'dob', 'bio',]
         help_texts = {k:"" for k in fields}
-        #     "username": None,
-        #     "Password1": None,
-        # }
+    
         widgets = {
 
         'dob':forms.DateInput(

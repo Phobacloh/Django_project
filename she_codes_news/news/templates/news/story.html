@@ -15,7 +15,7 @@
         {{ story.content|linebreaks }}
     
     {% if user.is_authenticated and request.user == story.author %}
-        <a href="{% url 'news:storyUpdate' pk=story.pk %}"><p>Update Story</p></a>
+        <a class="update" href ="{% url 'news:storyUpdate' pk=story.pk %}"><p>Update Story</p></a>
     {% else %}
         {% comment %} <a href="{% url 'login' %}">Login</a> {% endcomment %}
     {% endif %}

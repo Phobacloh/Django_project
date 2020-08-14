@@ -88,3 +88,31 @@
 .help_text {
     display: none;
 }
+#user_stories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+    
+#user_stories .story-card {
+    flex-basis: 32%;
+    flex-grow: 1;
+}
+
+#bio{
+    background-color: rgb(221, 213, 213);
+    border: black solid 1px;
+    width: fit-content;
+    padding: 10px;
+    border: 0px;
+}
+#dob{
+    background-color: rgb(221, 213, 213);
+    border: black solid 1px;
+    width: fit-content;
+    padding: 10px;
+    border: 0px;
+}
+.update{
+    color: blueviolet;
+}

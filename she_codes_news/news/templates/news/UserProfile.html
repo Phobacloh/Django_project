@@ -8,22 +8,18 @@
 {% endblock %}
 
 {% block content %}
-{% comment %} <form method="post">
-  {% csrf_token %}
-  {{ user_form.as_p }}
-  {{ profile_form.as_p }}
-  <button type="submit">Save changes</button>
-</form> {% endcomment %}
-<h2>{{ user.username}}'s Profile</h2>
-<p> </br>
+
+<h2>{{ user.username}}'s Profile</h2></br>
+<h3>About me:</h3></br> 
+<p id = "bio">{{ user.bio }}</P>
+<h3>Date of Birth:</h3></br>  
+<p id = "dob">{{ user.dob }}</br></p>
+
 {% if user.is_authenticated %}
-        <a href="{% url 'users:updateProfile' pk=request.user.pk %}"><p>Update your details</p></a>
+        <a class="update" href ="{% url 'users:updateProfile' pk=request.user.pk %}"><p>Update your details</p></a>
     {% else %}
    
     {% endif %}
-
-<b>About me:</b>  {{ user.bio }}</br>
-</p>
 
 <h2> {{ user.username }}'s Stories </h2>
 

@@ -9,8 +9,16 @@
 
 {% block content %}
 
-<h2> {{ object.username }}'s Stories </h2>
 
+
+<h2>{{ object.username}}'s Profile</h2></br>
+
+<h3>About {{ object.username }}:</h3></br> 
+<p id = "bio">{{ object.username.bio }}</P>
+<h3>Date of Birth:</h3></br>  
+<p id = "dob">{{ object.username..dob }}</br></p>
+
+<h2> {{ object.username }}'s Stories </h2>
 <div id="user_stories">
         {% if object.stories.all %}
             {% for story in object.stories.all %}
